@@ -8,6 +8,7 @@ cn\larry\ClimbName.class
 cn\larry\Dao\UpdateTask.class
 cn\larry\entity\Evaluations.class
 cn\larry\analysis\IKSpliter.class
+cn\larry\IKSpliter.class
 cn\larry\StopThread$1.class
 cn\larry\qrcode\MatrixToImageWriter.class
 cn\larry\Dao\HibernateDaoUtil.class

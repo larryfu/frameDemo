@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <aop:aspectj-autoproxy/>
+    <context:component-scan base-package="cn.larry.demo.aop"/>
+
+
+    <!--<bean id="sleepAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
+    <!--<property name="advice" ref="sleepHelper"/>-->
+    <!--<property name="pattern" value=".*sleep"/>-->
+    <!--</bean>-->
+    <!--<bean id="human" class="cn.larry.demo.aop.Human">-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>-->
+
+
+
+
+    <!-- 使用Spring来定义纯粹的POJO切面 -->
+
+    <!--<bean id="sleepHelper" class="cn.larry.demo.aop.AnotationSleepHelper">-->
+    <!--</bean>-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="sleepHelper">-->
+            <!--<aop:before method="before" pointcut="execution(* *.sleep(..))"/>-->
+            <!--<aop:after method="afterReturning" pointcut="execution(* *.sleep(..))"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+
+</beans>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tencent.lucas.demo.mybatis.dal.EveningBonusPoolMapper">
+
+
+    <select id="getCurrentRound" resultType="int">
+        SELECT round_id
+        from evening_bonus_pool
+        where status = 1;
+    </select>
+
+    <select id="getComputeRound">
+        SELECT round_id
+        from evening_bonus_pool
+        where status = 2;
+    </select>
+
+    <select id="getBonusPoolInfo">
+        SELECT *
+        FROM evening_bonus_pool
+        where id = #{roundId}
+    </select>
+
+    <update id="updatePoolStatus">
+        UPDATE evening_bonus_pool
+        set status=#{status}
+        where round_id=#{roundId}
+    </update>
+
+    <update id="updatePoolShowStatus">
+        UPDATE evening_bonus_pool
+        set show_status=#{showStatus}
+        where round_id=#{roundId}
+    </update>
+
+    <update id="updateOfficialSupply">
+        UPDATE evening_bonus_pool
+        set show_status=#{officialSupply}
+        where round_id=#{roundId}
+    </update>
+
+    <update id="updateBonusHuadou">
+         UPDATE evening_bonus_pool
+        set huadou=huadou+#{huadou}
+         where round_id=#{roundId}
+    </update>
+
+    <insert id="insertTest" parameterType="map">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        INSERT INTO test_table(`name`) values(#{name})
+    </insert>
+
+</mapper>

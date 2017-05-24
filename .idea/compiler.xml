@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dubbodemo" />
         <module name="framework.prototype" />
+        <module name="quasar.demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dubbodemo" target="1.8" />
       <module name="framedemo" target="1.8" />
       <module name="framework.prototype" target="1.8" />
+      <module name="quasar.demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
